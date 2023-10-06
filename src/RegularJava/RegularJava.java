@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
@@ -30,8 +28,7 @@ public class RegularJava {
         //String pattern = "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$";
         String pattern = "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$";
 
-        if (Pattern.matches(pattern, str)) return true;
-        return false;
+        return Pattern.matches(pattern, str);
     }
 
     public static boolean isURL(String url)
@@ -42,8 +39,7 @@ public class RegularJava {
         else {
             String pattern = "^(https?://)?([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9](\\.[a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]+)+)(:[0-9]+)?(/[^?#]*)?(\\?[^#]*=.*)?(#.*)?$";
 
-            if (Pattern.matches(pattern, url)) return true;
-            return false;
+            return Pattern.matches(pattern, url);
         }
     }
 
@@ -51,8 +47,6 @@ public class RegularJava {
     {
         String pattern = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[a-zA-Z0-9_]{8,}$"; //?= - заглядывание вперёд
 
-        if (Pattern.matches(pattern, pw))
-            return true;
-        return false;
+        return Pattern.matches(pattern, pw);
     }
 }

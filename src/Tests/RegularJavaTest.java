@@ -1,4 +1,3 @@
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -51,7 +50,8 @@ class RegularJavaTest {
             "http://invalid!url.com/", //символ "!" не допустим
             "https://a.com/", //некорректный домен
             "https://www.cadr.com?page", //некорректный запрос
-            "www.-badwork.com"
+            "www.-badwork.com",
+            "www.vy..at..su..ki...rov.ru"
     })
     void invalidUrl(String url)
     {
